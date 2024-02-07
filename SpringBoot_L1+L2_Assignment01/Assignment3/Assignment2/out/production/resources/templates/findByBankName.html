@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FindByBankName</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>BankName   <b>( <span th:text="${bankName}"></span> )</b> and their BranchServices</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>BankName</th>
+            <th>BranchService</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bank : ${nameList}">
+            <td th:text="${bank.bankName}"></td>
+            <td th:text="${bank.bankService}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

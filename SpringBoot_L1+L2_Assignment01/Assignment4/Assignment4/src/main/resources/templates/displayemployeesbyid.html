@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Employee Details</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Employee Details using Employee id <span th:text="${id}"></span></h1>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Email</th>
+                <th>Employee Location</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.employeeName}"></td>
+                <td th:text="${employee.employeeEmail}"></td>
+                <td th:text="${employee.employeeLocation}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

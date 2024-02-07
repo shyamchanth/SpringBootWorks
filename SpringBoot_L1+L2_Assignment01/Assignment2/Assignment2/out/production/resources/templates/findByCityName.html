@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FindByBranchName</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>First Ten BankName and their BranchName of City  <b> <span th:text="${city}"></span></b></h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>No's</th>
+            <th>BankName</th>
+            <th>Branch</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bank : ${branch}">
+            <td th:text="${bank.id}"></td>
+            <td th:text="${bank.bankName}"></td>
+            <td th:text="${bank.branch}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

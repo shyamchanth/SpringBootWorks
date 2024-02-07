@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Register Form</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1>Employee Registation</h1>
+            <div class="card-body">
+                <form th:action="@{/employeepost}"  th:object="${employee}" method="post">
+                    <div class="form-group">
+                        <label>Employee Name</label>
+                        <input type="text" name="EmployeeName" placeholder="Enter a Employee Name" th:field="*{employeeName}" class="form-control" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Employee Email</label>
+                        <input type="text" name="EmployeeEmail" placeholder="Enter a Employee Email" th:field="*{employeeEmail}" class="form-control" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Location </label>
+                        <input type="text" name="Location" placeholder="Enter a Employee Location" th:field="*{employeeLocation}" class="form-control" required>
+
+                    </div>
+                    <div class="body-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
